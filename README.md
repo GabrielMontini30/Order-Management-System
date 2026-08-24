@@ -111,8 +111,8 @@ A aplicação implementa regras de negócio como:
 ## Security
 
 A autenticação é implementada utilizando Spring Security e JWT.
-The application uses:
 
+O aplicativo utiliza:
 * Password encryption
 * JWT authentication
 * Authentication filters
@@ -136,7 +136,7 @@ Construído com:
 * AssertJ
 * MockMvc
 
-O teste abrange::
+O teste abrange:
 
 * Business rules
 * Successful operations
@@ -155,13 +155,13 @@ Clone o projeto:
 git clone https://github.com/GabrielMontini30/Order-Management-System
 ```
 
-Entre no projeto::
+Entre no projeto:
 
 ```bash
 cd Order-Management-System
 ```
 
-Execute o aplicativo:
+Execute a aplicação:
 
 ```bash
 mvn spring-boot:run
@@ -195,7 +195,7 @@ Swagger/OpenAPI:
 http://localhost:8080/swagger-ui/index.html
 ```
 
-A documentação da API fornece os endpoints disponíveis, the request bodies, os responses e HTTP status code.
+A documentação da API fornece os endpoints disponíveis, os request bodies, os responses e HTTP status code.
 ## Author
 
 Gabriel Montini
