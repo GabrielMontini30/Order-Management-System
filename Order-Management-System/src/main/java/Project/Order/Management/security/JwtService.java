@@ -1,0 +1,50 @@
+package Project.Order.Management.security;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import java.util.Date;
+
+@Service
+public class JwtService {
+
+    private final String secret;
+
+    public JwtService(@Value("${api.security.token.secret}") String secret) {
+        this.secret = secret;
+    }
+
+    public String generatedToken(String username){
+        Algorithm algorithm = Algorithm.HMAC256(secret);
+        return JWT.create().
+                withIssuer("api-auth")
+                .withSubject(username)
+                .withIssuedAt(new Date(System.currentTimeMillis()))
+                .withExpiresAt(new Date(System.currentTimeMillis()+60*60*3000))
+                .sign(algorithm);
+    }
+
+    public boolean validateToken(String token){
+        Algorithm algorithm = Algorithm.HMAC256(secret);
+        try {
+            JWT.require(algorithm)
+                   .withIssuer("api-auth")
+                   .build()
+                   .verify(token);
+            return true;
+       }catch (Exception e ){
+           return false;
+       }
+    }
+
+    public String extractUsername(String token){
+        Algorithm algorithm = Algorithm.HMAC256(secret);
+        return  JWT.require(algorithm)
+                .withIssuer("api-auth")
+                .build()
+                .verify(token)
+                .getSubject();
+    }
+}
