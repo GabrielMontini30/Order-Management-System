@@ -1,13 +1,11 @@
 # Order Manager System
 
-REST API for an Order Management System built with Java and Spring Boot.
-
+API REST para um Order Management System desenvolvido com Java e Spring Boot.
 ## About
 
-Order Manager System is a REST API designed to manage customers, products and orders.
+O Order Manager System é uma API REST projetada para gerenciar clientes, produtos e pedidos.
 
-The application allows:
-
+O aplicativo permite:
 * User authentication
 * Customer management
 * Product management
@@ -39,8 +37,7 @@ The application allows:
 
 ## Architecture
 
-The project follows a layered architecture:
-
+O projeto segue uma arquitetura em camadas:
 ```text
 Controller
     │
@@ -54,7 +51,7 @@ Repository
 Database
 ```
 
-The application also uses:
+O aplicativo também utiliza:
 
 * DTOs
 * MapStruct
@@ -101,21 +98,19 @@ The application also uses:
 
 ## Business Rules
 
-The application implements business rules such as:
+A aplicação implementa regras de negócio como:
 
-* User email cannot be duplicated
-* Customer must exist before creating an order
-* Products must exist before being added to an order
-* Orders cannot be created without items
-* Item quantity must be valid
-* Product stock is validated before creating an order
-* Product stock is reduced after an order is created
-* Order status changes follow the rules defined by the domain
-
+* O e-mail do usuário não pode ser duplicado
+* O cliente deve existir antes da criação de um pedido
+* Os produtos devem existir antes de serem adicionados a um pedido
+* Pedidos não podem ser criados sem itens
+* A quantidade do item deve ser válida
+* O estoque do produto é validado antes da criação de um pedido
+* O estoque do produto é reduzido após a criação de um pedido
+* As alterações de status do pedido seguem as regras definidas pelo domínio
 ## Security
 
-Authentication is implemented using Spring Security and JWT.
-
+A autenticação é implementada utilizando Spring Security e JWT.
 The application uses:
 
 * Password encryption
@@ -124,25 +119,24 @@ The application uses:
 * User roles
 * Protected endpoints
 
-The authenticated user can be used by the application to identify the user responsible for an operation.
-
+O usuário autenticado pode ser utilizado pela aplicação para identificar o usuário responsável por uma operação.
 ## Tests
 
-The project contains:
+O projeto contém:
 
 * Service Tests
 * Controller Tests
 * JWT Tests
 * Security Tests
 
-Built using:
+Construído com:
 
 * JUnit 5
 * Mockito
 * AssertJ
 * MockMvc
 
-The tests cover:
+O teste abrange::
 
 * Business rules
 * Successful operations
@@ -155,19 +149,19 @@ The tests cover:
 
 ## Running
 
-Clone the project:
+Clone o projeto:
 
 ```bash
 git clone https://github.com/GabrielMontini30/Order-Management-System
 ```
 
-Enter the project:
+Entre no projeto::
 
 ```bash
 cd Order-Management-System
 ```
 
-Run the application:
+Execute o aplicativo:
 
 ```bash
 mvn spring-boot:run
@@ -177,13 +171,13 @@ mvn spring-boot:run
 
 MySQL
 
-Configure the database in:
+Configure o banco de dados em:
 
 ```text
 application.yml
 ```
 
-Example:
+Exemplo:
 
 ```yaml
 spring:
@@ -201,8 +195,7 @@ Swagger/OpenAPI:
 http://localhost:8080/swagger-ui/index.html
 ```
 
-The API documentation provides the available endpoints, request bodies, responses and HTTP status codes.
-
+A documentação da API fornece os endpoints disponíveis, the request bodies, os responses e HTTP status code.
 ## Author
 
 Gabriel Montini
