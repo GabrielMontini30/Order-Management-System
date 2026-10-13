@@ -31,3 +31,21 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Logs
+*.log
+logs/
+
+# Variáveis de ambiente e segredos locais
+.env
+.env.*
+!.env.example
+
+# Configurações locais que podem conter credenciais
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db

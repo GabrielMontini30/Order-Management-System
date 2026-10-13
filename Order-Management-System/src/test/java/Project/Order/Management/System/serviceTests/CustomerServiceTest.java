@@ -65,7 +65,7 @@ public class CustomerServiceTest {
         BDDMockito.given(customerMap.toEntity(customerRequest, users)).willReturn(customer);
         BDDMockito.given(customerMap.CustomerToResponse(customer)).willReturn(customerResponse);
 
-        CustomerResponse results = customerService.createCustomer(customerRequest, users.getEmail());
+        CustomerResponse results = customerService.create(customerRequest, users.getEmail());
 
         Assertions.assertThat(results).isNotNull();
         Assertions.assertThat(results.getId()).isEqualTo(customerResponse.getId());

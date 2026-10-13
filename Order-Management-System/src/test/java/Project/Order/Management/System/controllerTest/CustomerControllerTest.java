@@ -58,7 +58,7 @@ public class CustomerControllerTest {
 
         CustomerResponse response = CustomerFactory.createCustomerResponse();
 
-        given(customerService.createCustomer(request, "gabriel@gmail.com")).willReturn(response);
+        given(customerService.create(request, "gabriel@gmail.com")).willReturn(response);
 
         Principal principal = () -> "gabriel@gmail.com";
 
@@ -69,7 +69,7 @@ public class CustomerControllerTest {
                 .andExpect(status().isCreated())
                 .andExpect(content().json(objectMapper.writeValueAsString(response)));
 
-        then(customerService).should().createCustomer(request, "gabriel@gmail.com");
+        then(customerService).should().create(request, "gabriel@gmail.com");
     }
 
     @Test
